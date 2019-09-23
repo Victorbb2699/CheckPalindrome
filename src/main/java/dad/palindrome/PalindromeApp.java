@@ -30,7 +30,7 @@ public class PalindromeApp extends Application {
 		comprobarButton.setDefaultButton(true);
 		comprobarButton.setOnAction(e -> oncomprobarButtonAction(e));
 
-		palindromeLabel = new Label("Aquí saldrá el saludo");
+		palindromeLabel = new Label("Es palindromo/No es palindromo");
 		
 
 		VBox root = new VBox();
@@ -40,7 +40,7 @@ public class PalindromeApp extends Application {
 
 		Scene scene = new Scene(root, 320, 200);
 
-		primaryStage.setTitle("");
+		primaryStage.setTitle("Comprobador de palindromo");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -53,11 +53,15 @@ public class PalindromeApp extends Application {
 		
 		if(palindromo = true) {
 			palindromeLabel.setText("Es palíndromo");
-			palindromeLabel.setStyle("-fx-text-fill: green; -fx-font: 30;");
+			palindromeLabel.setStyle("-fx-text-fill: green;");
 		}else {
 			palindromeLabel.setText("No es palíndromo");
-			palindromeLabel.setStyle("-fx-text-fill: red; -fx-font: 30;");
+			palindromeLabel.setStyle("-fx-text-fill: red;");
 		}
+	}
+	public static void main(String[] args) {
+		launch(args);
+		
 	}
 }
 
