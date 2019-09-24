@@ -27,7 +27,7 @@ public class PalindromeApp extends Application {
 		comprobarButton.setDefaultButton(true);
 		comprobarButton.setOnAction(e -> oncomprobarButtonAction(e));
 
-		palindromeLabel = new Label("Es palindromo/No es palindromo");
+		palindromeLabel = new Label("Es palindromo / No es palindromo");
 
 		VBox root = new VBox();
 		root.setSpacing(5);
@@ -43,7 +43,6 @@ public class PalindromeApp extends Application {
 
 	private void oncomprobarButtonAction(ActionEvent e) {
 		String palabra = nombreText.getText();
-		boolean palindromo;
 
 		char[] espalindrome;
 		boolean verdadero = true;
