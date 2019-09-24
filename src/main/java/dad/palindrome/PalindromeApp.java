@@ -1,6 +1,5 @@
 package dad.palindrome;
 
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
@@ -12,17 +11,15 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class PalindromeApp extends Application {
-		
-		private Label palindromeLabel;
-		private Button comprobarButton;
-		private TextField nombreText;
 
-
+	private Label palindromeLabel;
+	private Button comprobarButton;
+	private TextField nombreText;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		nombreText = new TextField();
-		//nombreText.setPrefColumnCount(5);
+		// nombreText.setPrefColumnCount(5);
 		nombreText.setPromptText("Introduce un texto");
 		nombreText.setMaxWidth(150);
 
@@ -31,7 +28,6 @@ public class PalindromeApp extends Application {
 		comprobarButton.setOnAction(e -> oncomprobarButtonAction(e));
 
 		palindromeLabel = new Label("Es palindromo/No es palindromo");
-		
 
 		VBox root = new VBox();
 		root.setSpacing(5);
@@ -45,23 +41,37 @@ public class PalindromeApp extends Application {
 		primaryStage.show();
 	}
 
-
-
 	private void oncomprobarButtonAction(ActionEvent e) {
 		String palabra = nombreText.getText();
 		boolean palindromo;
-		
-		if(palindromo = true) {
+
+		char[] espalindrome;
+		boolean verdadero = true;
+		int j, i = 0;
+
+		espalindrome = palabra.toCharArray();
+		j = espalindrome.length - 1;
+
+		while (verdadero == true && i < j) {
+			if (espalindrome[i] != espalindrome[j]) {
+				verdadero = false;
+
+			}
+			i++;
+			j--;
+		}
+
+		if (verdadero == true) {
 			palindromeLabel.setText("Es palíndromo");
 			palindromeLabel.setStyle("-fx-text-fill: green;");
-		}else {
+		} else {
 			palindromeLabel.setText("No es palíndromo");
 			palindromeLabel.setStyle("-fx-text-fill: red;");
 		}
 	}
+
 	public static void main(String[] args) {
 		launch(args);
-		
+
 	}
 }
-
